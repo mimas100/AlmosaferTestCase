@@ -1,0 +1,48 @@
+package loginTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ById;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class login {
+	WebDriver driver = new ChromeDriver();
+	
+	@BeforeTest
+public void mysetup()
+{
+		driver.manage().window().maximize();
+		driver.get("http://127.0.0.1:5500/index.html");
+
+
+
+
+
+}
+	@Test
+	public void loginTest()
+	{
+	WebElement userNameInput =	driver.findElement(By.id("username"));
+	WebElement password = 	driver.findElement(By.id("password"));
+	WebElement birthdate = 	driver.findElement(By.id("birthdate"));
+    WebElement mobilenum=    driver.findElement(By.id("mobilenum"));
+
+    
+    userNameInput.sendKeys("Mimas shatnawi");
+    password.sendKeys("123456");  
+    birthdate.sendKeys("1/1/1990");
+    mobilenum.sendKeys("963852741");
+		
+	}
+		
+		
+		
+		
+		
+	}
+	
+
+

@@ -1,0 +1,27 @@
+package almosaferLastSeleniumTest;
+
+import java.sql.Driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+public class almosaferTest {
+	
+	WebDriver driver = new ChromeDriver();
+	String webSite = "https://www.almosafer.com/en";
+	
+	
+	@BeforeTest
+	
+	public void mySetup(){
+		driver.get(webSite);
+		driver.manage().window().maximize();
+		
+		
+		
+		
+		
+	}
+
+}

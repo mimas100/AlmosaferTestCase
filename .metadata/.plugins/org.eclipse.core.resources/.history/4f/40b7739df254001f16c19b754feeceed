@@ -1,0 +1,140 @@
+package magentoWebSiteTest;
+
+import java.sql.Driver;
+import java.util.List;
+import java.util.Random;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.AbstractFindByBuilder;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class myFristTest {
+
+	WebDriver driver = new ChromeDriver();
+	String webSite = "https://magento.softwaretestingboard.com/";
+	Random random = new Random();
+	String password = "Pass1234!";
+	
+	String logOutPage = "https://magento.softwaretestingboard.com/customer/account/logout/";
+
+	String Email = "";
+
+	@BeforeTest
+	public void setupTest() {
+		driver.get(webSite);
+		driver.manage().window().maximize();
+	}
+
+	@Test(priority = 1, enabled = false)
+	public void Ceate0AccountTest() {
+		// create Account by Link Test
+		WebElement createAnAccount = driver.findElement(By.linkText("Create an Account"));
+		createAnAccount.click();
+
+		// Create Account by Partial Test
+		// WebElement createAnAccount =
+		// driver.findElement(By.partialLinkText("Account"));
+		// createAnAccount.click();
+
+		// create Account by xpath
+		// WebElement createAnAccount =
+		// driver.findElement(By.xpath("//a[@href='https://magento.softwaretestingboard.com/customer/account/create/']"));
+		// createAnAccount.click();
+
+		// [@href="https://magento.softwaretestingboard.com/customer/account/create/"]
+
+		// first names
+		String[] first_Names = { "Alice", "Bob", "Charlie", "David", "Eve", "Fay", "Grace" };
+		// last names
+		String[] last_Names = { "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia" };
+
+		int firstNameRandomIndex = random.nextInt(first_Names.length);
+		int lastNameRandomIndex = random.nextInt(last_Names.length);
+
+		String firstNameInput = first_Names[firstNameRandomIndex];
+		String lastNameInput = first_Names[lastNameRandomIndex];
+		int randomNum = random.nextInt(9999);
+		String emailDomin = "@gmail.com";
+
+		WebElement firstName = driver.findElement(By.id("firstname"));
+		firstName.sendKeys(firstNameInput);
+
+		WebElement lastName = driver.findElement(By.id("lastname"));
+		lastName.sendKeys(lastNameInput);
+
+		WebElement anEmailAdress = driver.findElement(By.id("email_address"));
+		Email = firstNameInput + lastNameInput + randomNum + emailDomin;
+
+		anEmailAdress.sendKeys(Email);
+
+		WebElement passWord = driver.findElement(By.id("password"));
+		passWord.sendKeys(password);
+
+		WebElement confirmedpassWord = driver.findElement(By.id("password-confirmation"));
+		confirmedpassWord.sendKeys(password);
+
+		WebElement CreateAccountButton = driver.findElement(By.xpath("//button[@title='Create an Account']"));
+		CreateAccountButton.click();
+
+	}
+
+	@Test(priority = 2, enabled = false)
+	public void logOutPage() throws InterruptedException {
+
+		driver.get(logOutPage);
+		// Thread.sleep(3000);
+
+	}
+
+	@Test(priority = 3, enabled = false)
+	public void loginTest() {
+		WebElement LoginPage = driver.findElement(By.linkText("Sign In"));
+		LoginPage.click();
+
+		WebElement EmailLoginInput = driver.findElement(By.id("email"));
+		WebElement passwordInput = driver.findElement(By.id("pass"));
+		WebElement LoginButton = driver.findElement(By.cssSelector(".action.login.primary"));
+
+		EmailLoginInput.sendKeys(Email);
+		passwordInput.sendKeys(password);
+		LoginButton.click();
+	}
+
+
+	
+	@Test(priority = 4, enabled = true)
+	public void addToMenSection()throws InterruptedException
+	{
+		
+		
+        WebElement MenSection = driver.findElement(By.id("ui-id-5"));
+		
+		MenSection.click();
+     	 
+     	 WebElement olOfMenItems = driver.findElement(By.className("product-items"));
+     	 List <WebElement> listOfItems = olOfMenItems.findElements(By.tagName("li"));
+     	 int AllItems = listOfItems.size();
+     	 
+     	 int randomIndexOfItem = random.nextInt(AllItems);
+     	listOfItems.get(randomIndexOfItem).click();
+     	
+     	
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
