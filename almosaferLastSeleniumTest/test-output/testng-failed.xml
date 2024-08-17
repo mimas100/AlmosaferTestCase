@@ -5,7 +5,7 @@
     <classes>
       <class name="almosaferLastSeleniumTest.almosaferTest">
         <methods>
-          <include name="checkifEnglishLanguage"/>
+          <include name="checkDepartureAndReturnDate"/>
           <include name="mySetup"/>
         </methods>
       </class> <!-- almosaferLastSeleniumTest.almosaferTest -->

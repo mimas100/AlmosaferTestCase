@@ -2,6 +2,9 @@ package almosaferLastSeleniumTest;
 
 import java.sql.Driver;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +19,7 @@ public class almosaferTest {
 	
 	WebDriver driver = new ChromeDriver();
 	String webSite = "https://www.almosafer.com/en";
+	Random random = new Random();
 	
 	
 	@BeforeTest
@@ -87,6 +91,56 @@ public class almosaferTest {
 		boolean expLogo = true;
 		
 		Assert.assertEquals(actualLogo, expLogo);
+			
+	}
+	
+	@Test(priority = 5)
+	public void checkifHotelSelected()
+	{
+		WebElement hotelSelected = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
+		String actualhotelSelected = hotelSelected.getAttribute("aria-selected");
+		String expectedhotelSelected = "false"; 
+		
+		Assert.assertEquals(actualhotelSelected, expectedhotelSelected);
+		
+	}
+	
+	@Test(priority = 6)
+	public void checkDepartureAndReturnDate()
+	{
+		LocalDate TodayDate = LocalDate.now();
+		
+		System.out.println(TodayDate);
+		int Today = TodayDate.getDayOfMonth();
+		System.out.println(Today);
+		
+		
+		int departureDate = TodayDate.plusDays(1).getDayOfMonth();
+		int returnDate = TodayDate.plusDays(2).getDayOfMonth();
+		
+		//int departureDate = Today+1;
+	   //int returnDate = Today+2;
+		
+	List<WebElement> DepartureAndReturnDate = driver.findElements(By.className("LiroG"));
+	String ActdepartureDate = DepartureAndReturnDate.get(0).getText();
+	String ActReturnDate = DepartureAndReturnDate.get(1).getText();
+	
+	int ActualDeparture = Integer.parseInt(ActdepartureDate);
+	int ActualReturn = Integer.parseInt(ActReturnDate);
+	
+	Assert.assertEquals(ActualDeparture, departureDate);
+	Assert.assertEquals(ActualReturn, returnDate);
+		
+	}
+	
+	
+	@Test(priority = 7)
+	public void changeURL()
+	{
+		String [] urls = {"https://www.almosafer.com/en" ," https://www.almosafer.com/ar"};
+		int randomURL = random.nextInt(urls.length);
+		
+		driver.get(urls[randomURL]);
 			
 	}
 }
