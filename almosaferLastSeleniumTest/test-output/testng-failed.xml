@@ -5,7 +5,7 @@
     <classes>
       <class name="almosaferLastSeleniumTest.almosaferTest">
         <methods>
-          <include name="checkDepartureAndReturnDate"/>
+          <include name="lowestHotelPrice"/>
           <include name="mySetup"/>
         </methods>
       </class> <!-- almosaferLastSeleniumTest.almosaferTest -->

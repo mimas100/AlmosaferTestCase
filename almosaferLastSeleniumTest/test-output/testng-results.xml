@@ -1,44 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-17T19:02:28 AST" name="Default suite" finished-at="2024-08-17T19:02:39 AST" duration-ms="10946">
+  <suite started-at="2024-08-19T22:39:50 AST" name="Default suite" finished-at="2024-08-19T22:40:27 AST" duration-ms="36829">
     <groups>
     </groups>
-    <test started-at="2024-08-17T19:02:28 AST" name="Default test" finished-at="2024-08-17T19:02:39 AST" duration-ms="10946">
+    <test started-at="2024-08-19T22:39:50 AST" name="Default test" finished-at="2024-08-19T22:40:27 AST" duration-ms="36829">
       <class name="almosaferLastSeleniumTest.almosaferTest">
-        <test-method is-config="true" signature="mySetup()[pri:0, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:28 AST" name="mySetup" finished-at="2024-08-17T19:02:36 AST" duration-ms="8624" status="PASS">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:39:50 AST" name="mySetup" finished-at="2024-08-19T22:40:00 AST" duration-ms="9901" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mySetup -->
-        <test-method signature="checkifEnglishLanguage()[pri:1, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:36 AST" name="checkifEnglishLanguage" finished-at="2024-08-17T19:02:37 AST" duration-ms="49" status="PASS">
+        <test-method signature="checkifEnglishLanguage()[pri:1, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:00 AST" name="checkifEnglishLanguage" finished-at="2024-08-19T22:40:00 AST" duration-ms="45" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkifEnglishLanguage -->
-        <test-method signature="checkifcurrencySAR()[pri:2, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:37 AST" name="checkifcurrencySAR" finished-at="2024-08-17T19:02:37 AST" duration-ms="69" status="PASS">
+        <test-method signature="checkifcurrencySAR()[pri:2, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:00 AST" name="checkifcurrencySAR" finished-at="2024-08-19T22:40:00 AST" duration-ms="38" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkifcurrencySAR -->
-        <test-method signature="checkifCorrectPhone()[pri:3, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:37 AST" name="checkifCorrectPhone" finished-at="2024-08-17T19:02:37 AST" duration-ms="31" status="PASS">
+        <test-method signature="checkifCorrectPhone()[pri:3, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:00 AST" name="checkifCorrectPhone" finished-at="2024-08-19T22:40:00 AST" duration-ms="31" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkifCorrectPhone -->
-        <test-method signature="checkQitafLogo()[pri:4, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:37 AST" name="checkQitafLogo" finished-at="2024-08-17T19:02:37 AST" duration-ms="40" status="PASS">
+        <test-method signature="checkQitafLogo()[pri:4, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:00 AST" name="checkQitafLogo" finished-at="2024-08-19T22:40:00 AST" duration-ms="46" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkQitafLogo -->
-        <test-method signature="checkifHotelSelected()[pri:5, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:37 AST" name="checkifHotelSelected" finished-at="2024-08-17T19:02:37 AST" duration-ms="36" status="PASS">
+        <test-method signature="checkifHotelSelected()[pri:5, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:00 AST" name="checkifHotelSelected" finished-at="2024-08-19T22:40:00 AST" duration-ms="29" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkifHotelSelected -->
-        <test-method signature="checkDepartureAndReturnDate()[pri:6, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:37 AST" name="checkDepartureAndReturnDate" finished-at="2024-08-17T19:02:37 AST" duration-ms="67" status="PASS">
+        <test-method signature="checkDepartureAndReturnDate()[pri:6, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:00 AST" name="checkDepartureAndReturnDate" finished-at="2024-08-19T22:40:00 AST" duration-ms="194" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkDepartureAndReturnDate -->
-        <test-method signature="changeURL()[pri:7, instance:almosaferLastSeleniumTest.almosaferTest@3c0fae6c]" started-at="2024-08-17T19:02:37 AST" name="changeURL" finished-at="2024-08-17T19:02:39 AST" duration-ms="1975" status="PASS">
+        <test-method signature="changeURL()[pri:7, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:00 AST" name="changeURL" finished-at="2024-08-19T22:40:03 AST" duration-ms="2427" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- changeURL -->
+        <test-method signature="searchSection()[pri:8, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:03 AST" name="searchSection" finished-at="2024-08-19T22:40:03 AST" duration-ms="567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchSection -->
+        <test-method signature="numberOfVisitors()[pri:9, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:03 AST" name="numberOfVisitors" finished-at="2024-08-19T22:40:13 AST" duration-ms="9357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- numberOfVisitors -->
+        <test-method signature="assertOfREsult()[pri:10, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:13 AST" name="assertOfREsult" finished-at="2024-08-19T22:40:25 AST" duration-ms="12503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertOfREsult -->
+        <test-method signature="lowestHotelPrice()[pri:11, instance:almosaferLastSeleniumTest.almosaferTest@6ffab045]" started-at="2024-08-19T22:40:25 AST" name="lowestHotelPrice" finished-at="2024-08-19T22:40:27 AST" duration-ms="1632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- lowestHotelPrice -->
       </class> <!-- almosaferLastSeleniumTest.almosaferTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
