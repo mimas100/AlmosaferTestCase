@@ -6,7 +6,6 @@ import java.sql.Driver;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,28 +17,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class almosaferTest {
-	
-	WebDriver driver = new ChromeDriver();
-	String webSite = "https://www.almosafer.com/en";
-	String appLanguage= driver.findElement(By.tagName("html")).getAttribute("lang");
- 
-	Random random = new Random();
-	
+public class almosaferTest extends global {
+
 	
 	@BeforeTest
 	
 	public void mySetup(){
-		driver.get(webSite);
-		driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); 
-
-		WebElement KingdomKSA = driver.findElement(By.cssSelector(".sc-jTzLTM.hQpNle.cta__button.cta__saudi.btn.btn-primary"));
-		KingdomKSA.click();
-		
+		generalSetup();
 		
 	}
-	
 	
 	
 	@Test(priority = 1)
@@ -52,7 +38,6 @@ public class almosaferTest {
 	    //WebElement EnglishLanguage = driver.findElement(By.cssSelector(".sc-gkFcWv.hcOfTd"));
 		//Thread.sleep(3000);
 		String ActualLang = appLanguage;
-		String ExceptedLang = "en";
 		
 		Assert.assertEquals(ActualLang, ExceptedLang);
 		
@@ -81,8 +66,7 @@ public class almosaferTest {
 	{
 		WebElement phoneNum = driver.findElement(By.tagName("strong"));
 		String ActualPhone = phoneNum.getText();
-		String ExpPhone = "+966554400000";
-		
+
 		Assert.assertEquals(ActualPhone, ExpPhone);	
 		
 	}
@@ -93,7 +77,6 @@ public class almosaferTest {
 	{
 		WebElement qitafLogo = driver.findElement(By.cssSelector(".sc-fihHvN.eYrDjb"));
 		boolean actualLogo = qitafLogo.isDisplayed();
-		boolean expLogo = true;
 		
 		Assert.assertEquals(actualLogo, expLogo);
 			
@@ -104,7 +87,6 @@ public class almosaferTest {
 	{
 		WebElement hotelSelected = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
 		String actualhotelSelected = hotelSelected.getAttribute("aria-selected");
-		String expectedhotelSelected = "false"; 
 		
 		Assert.assertEquals(actualhotelSelected, expectedhotelSelected);
 		
@@ -113,7 +95,6 @@ public class almosaferTest {
 	@Test(priority = 6)
 	public void checkDepartureAndReturnDate()
 	{
-		LocalDate TodayDate = LocalDate.now();
 		
 		System.out.println(TodayDate);
 		int Today = TodayDate.getDayOfMonth();
@@ -142,11 +123,7 @@ public class almosaferTest {
 	@Test(priority = 7)
 	public void changeURL()
 	{
-		String [] urls = {"https://www.almosafer.com/en" ," https://www.almosafer.com/ar"};
-		int randomURL = random.nextInt(urls.length);
-		
-		driver.get(urls[randomURL]);
-			
+		changeURLCalss();
 	}
 	
 	@Test (priority = 8 )
@@ -161,21 +138,15 @@ public class almosaferTest {
 		String appLanguage= driver.findElement(By.tagName("html")).getAttribute("lang");
 		
 		
+		
 		if(appLanguage.contains("en"))
 		{
 			
-			String[] Location = {"Dubai","Jedda","Riyada"};
-			int randomCountryIndex = random.nextInt(Location.length);
-			String randomCountry = Location[randomCountryIndex];
 			
 			country.sendKeys(randomCountry);
 		}
 		if(appLanguage.contains("ar"))
 		{
-			
-			String[] Location = {"جدة","الرياض"};
-			int randomCountryIndex = random.nextInt(Location.length);
-			String randomCountry = Location[randomCountryIndex];
 			
 			  country.sendKeys(randomCountry);
 		}
@@ -233,7 +204,6 @@ public class almosaferTest {
 		String resultLoaded = ResultPage.getText();
 		
 		Boolean result = resultLoaded.contains("found") || resultLoaded.contains("وجدنا");
-		Boolean ExpectedResult = true;
 		Assert.assertEquals(result, ExpectedResult);
 		
 	
@@ -257,7 +227,6 @@ public class almosaferTest {
 		int HighestASInt = Integer.parseInt(HighestPrice);
 		
 		Boolean actual = lowestASInt<HighestASInt;
-		Boolean expexted = true;
 		
 		Assert.assertEquals(actual, expexted);
 		

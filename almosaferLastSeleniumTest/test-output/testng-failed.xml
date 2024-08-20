@@ -5,8 +5,16 @@
     <classes>
       <class name="almosaferLastSeleniumTest.almosaferTest">
         <methods>
+          <include name="checkifCorrectPhone"/>
+          <include name="checkifHotelSelected"/>
+          <include name="searchSection"/>
+          <include name="checkifcurrencySAR"/>
+          <include name="assertOfREsult"/>
           <include name="lowestHotelPrice"/>
+          <include name="checkDepartureAndReturnDate"/>
+          <include name="numberOfVisitors"/>
           <include name="mySetup"/>
+          <include name="checkQitafLogo"/>
         </methods>
       </class> <!-- almosaferLastSeleniumTest.almosaferTest -->
     </classes>
